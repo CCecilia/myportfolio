@@ -1,0 +1,33 @@
+{% extends "htmlPages/base.html" %}
+{% block content %}
+{% load staticfiles %}
+	<!-- Tutorial Grid -->
+    <section class="bg-light" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Tutorials</h2>
+            <h3 class="section-subheading text-muted">The best to solidify your knowlege is by teaching.</h3>
+          </div>
+        </div>
+        <div class="row">
+    		{% for tutorial in tutorials %}
+				<div class="col-md-4 col-sm-6 portfolio-item">
+					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{ tutorial.id }}">
+					  <div class="portfolio-hover">
+					    <div class="portfolio-hover-content">
+					      <i class="fa fa-plus fa-3x"></i>
+					    </div>
+					  </div>
+					  <img class="img-fluid portfolio-img" src="{{ tutorial.image }}" alt="{{ tutorial.name }}">
+					</a>
+					<div class="portfolio-caption">
+					  <h4>{{ tutorial.name }}</h4>
+					  <p class="text-muted">{{ tutorial.type }}</p>
+					</div>
+				</div>
+            {% endfor %}
+        </div>
+      </div>
+    </section>
+{% endblock %}

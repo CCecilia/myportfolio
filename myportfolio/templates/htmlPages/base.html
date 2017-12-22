@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="{{ activeProfile.name|title }}'s porfolio site.">
+		<meta name="author" content="{{ activeProfile.name|title }}">
+	    <meta name="keywords" content="{{ activeProfile.name|title }}, web developer, {% for language in languages %}{{ language.name }},{% endfor %}">
+	    <link rel="icon" href="{% static 'img/black_american_flag.png' %}">
+
+		<title>{{ activeProfile.name|title }}</title>
+
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+
+		<!-- Custom fonts for this template -->
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+		<!-- Custom styles for this template -->
+		<link href="{% static 'css/agency.css' %}" rel="stylesheet">
+	</head>
+	<body id="page-top">
+		<!-- Navigation -->
+		<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+			<div class="container">
+				<a class="navbar-brand js-scroll-trigger" href="/">{{ activeProfile.name|title }}</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				Menu
+					<i class="fa fa-bars"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav text-uppercase ml-auto">
+						{% if page == 'index' %}
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="#services">Services</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="#about">About</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/tutorials/">Tutorials</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+							</li>
+						{% else%}
+							<li class="nav-item">
+								<a class="nav-link js-scroll-trigger" href="/">Home</a>
+							</li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</nav>
+		{% block content %}{% endblock %}
+		<!-- Footer -->
+	    <footer>
+	      <div class="container">
+	        <div class="row">
+	          <div class="col-md-4">
+	            <span class="copyright">Copyright &copy; {{ activeProfile.name|title }}2017</span>
+	          </div>
+	          <div class="col-md-4">
+	            <ul class="list-inline social-buttons">
+	            	{% if activeProfile.twitter_profile_link %}
+		                <li class="list-inline-item">
+			                <a href="{{ activeProfile.twitter_profile_link }}">
+			                    <i class="fa fa-twitter" aria-hidden="true"></i>
+			                </a>
+		                </li>
+	              	{%  endif %}
+	              	{% if activeProfile.facebook_profile_link %}
+						<li class="list-inline-item">
+							<a href="{{ activeProfile.facebook_profile_link }}">
+							  	<i class="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+						</li>
+					{% endif %}
+	              	{% if activeProfile.linkedin_profile_link %}
+						<li class="list-inline-item">
+							<a href="{{ activeProfile.linkedin_profile_link }}">
+							  	<i class="fa fa-linkedin" aria-hidden="true"></i>
+							</a>
+						</li>
+					{% endif %}
+	              	{% if activeProfile.github_profile_link %}
+						<li class="list-inline-item">
+							<a href="{{ activeProfile.github_profile_link }}">
+							  	<i class="fa fa-github" aria-hidden="true"></i>
+							</a>
+						</li>
+					{% endif %}
+	              	{% if activeProfile.google_plus_profile_link %}
+						<li class="list-inline-item">
+							<a href="{{ activeProfile.google_plus_profile_link }}">
+							  	<i class="fa fa-google-plus" aria-hidden="true"></i>
+							</a>
+						</li>
+					{% endif %}
+	              	{% if activeProfile.stackoverflow_profile_link %}
+						<li class="list-inline-item">
+							<a href="{{ activeProfile.stackoverflow_profile_link }}">
+							  	<i class="fa fa-stack-overflow" aria-hidden="true"></i>
+							</a>
+						</li>
+					{% endif %}
+	            </ul>
+	          </div>
+	          <div class="col-md-4">
+	            <ul class="list-inline quicklinks">
+	              <li class="list-inline-item">
+	                <a href="#">Privacy Policy</a>
+	              </li>
+	              <li class="list-inline-item">
+	                <a href="#">Terms of Use</a>
+	              </li>
+	            </ul>
+	          </div>
+	        </div>
+	      </div>
+	    </footer>
+
+	    <!-- Portfolio Modals -->
+	    {% for project in projects %}
+		    <!-- Modal {{ project.id }} -->
+		    <div class="portfolio-modal modal fade" id="portfolioModal{{ project.id }}" tabindex="-1" role="dialog" aria-hidden="true">
+		      <div class="modal-dialog">
+		        <div class="modal-content">
+		          <div class="close-modal" data-dismiss="modal">
+		            <div class="lr">
+		              <div class="rl"></div>
+		            </div>
+		          </div>
+		          <div class="container">
+		            <div class="row">
+		              <div class="col-lg-8 mx-auto">
+		                <div class="modal-body">
+		                  <!-- Project Details Go Here -->
+		                  <h2 class="text-uppercase">{{ project.name }}</h2>
+		                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+		                  <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">{{ project.description }}</p>
+		                  <ul class="list-inline">
+		                    <li>Date: January 2017</li>
+		                    <li>Client: Threads</li>
+		                    <li>Category: Illustration</li>
+		                  </ul>
+		                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+		                    <i class="fa fa-times"></i>Close Project</button>
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+	    {% endfor %}
+
+	    
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+		<!-- Plugin JavaScript -->
+    	<script src="{% static 'js/jquery-easing/jquery.easing.min.js' %}"></script>
+
+		<!-- Contact form JavaScript -->
+		<script src="{% static 'js/jqBootstrapValidation.js' %}"></script>
+		<script src="{% static 'js/contact_me.js' %}"></script>
+
+		<!-- Custom scripts for this template -->
+		<script src="{% static 'js/agency.js' %}"></script>
+
+	</body>
+
+	
+</html>
