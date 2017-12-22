@@ -15,7 +15,11 @@ SECRET_KEY = ''.join([random.SystemRandom().choice("{}{}{}".format(string.ascii_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'christiancecilia.us-east-1.elasticbeanstalk.com'
+
+]
 
 
 # Application definition
