@@ -1,6 +1,13 @@
 $(function() {
+  $.ajaxSetup({
+      headers: {
+          "X-CSRFToken": $("input[name='csrfmiddlewaretoken']").val()
+      }
+  });
+
 
   $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
+
     preventSubmit: true,
     submitError: function($form, event, errors) {
       // additional error messages or events
@@ -20,7 +27,7 @@ $(function() {
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
-        url: "././mail/contact_me.php",
+        url: "/email/contactme/send/",
         type: "POST",
         data: {
           name: name,
