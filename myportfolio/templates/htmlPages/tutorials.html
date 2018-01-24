@@ -7,10 +7,45 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Tutorials</h2>
-            <h3 class="section-subheading text-muted">The best to solidify your knowlege is by teaching.</h3>
+            <h3 class="section-subheading text-muted">The best way to solidify your knowlege is through teaching.</h3>
           </div>
         </div>
-        <div class="row">
+        <div class="row tutorial-category-img-wrap">
+        	<div class="col-lg-4 text-center">
+        		<img class="tutorial-category-img" src="{% static 'img/python_logo.png' %}" alt="Python" data-type="py"/>
+        	</div>
+        	<div class="col-lg-4 text-center">
+        		<img class="tutorial-category-img" src="{% static 'img/js_logo.png' %}" alt="Javascript" data-type="js"/>
+        	</div>
+        	<div class="col-lg-4 text-center">
+        		<img class="tutorial-category-img" src="{% static 'img/mongodb_logo.png' %}" alt="Mongo DB" data-type="mg"/>
+        	</div>
+    	</div>
+    	<div class="row selected-category" data-type="py">
+    		<div class="col-lg-2 text-left">
+    			<img class="tutorial-category-selected-img" src="{% static 'img/python_logo.png' %}" alt="Javascript"/>
+    		</div>
+    		<div class="col-lg-8 text-right">
+    			<i class="fa fa-close close-tutorial-selected"></i>
+    		</div>
+    	</div>
+    	<div class="row selected-category" data-type="js">
+    		<div class="col-lg-2 text-left">
+    			<img class="tutorial-category-selected-img" src="{% static 'img/js_logo.png' %}" alt="Javascript"/>
+    		</div>
+    		<div class="col-lg-8 text-right">
+    			<i class="fa fa-close close-tutorial-selected"></i>
+    		</div>
+    	</div>
+    	<div class="row selected-category" data-type="mg">
+    		<div class="col-lg-2 text-left">
+    			<img class="tutorial-category-selected-img" src="{% static 'img/mongodb_logo.png' %}" alt="Javascript"/>
+    		</div>
+    		<div class="col-lg-8 text-right">
+    			<i class="fa fa-close close-tutorial-selected"></i>
+    		</div>
+    	</div>
+    	<div class="row">
     		{% for tutorial in tutorials %}
 				<div class="col-md-4 col-sm-6 portfolio-item">
 					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{ tutorial.id }}">

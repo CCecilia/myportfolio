@@ -130,9 +130,32 @@ font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
   color: white;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
 }
-  #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #fed136; 
-  }
+#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+  color: #fed136; 
+}
+
+.tutorial-category-img{
+  width: 10em;
+  height: auto;
+}
+
+.tutorial-category-img:hover{
+  width: 10.5em;
+  cursor: pointer;
+}
+
+.tutorial-category-selected-img{
+  width: 100%;
+}
+
+.selected-category{
+  display: none;
+}
+
+.close-tutorial-selected{
+  font-size: 1.5em;
+  padding-bottom: 100px;
+}
 
 @media (min-width: 992px) {
   #mainNav {
