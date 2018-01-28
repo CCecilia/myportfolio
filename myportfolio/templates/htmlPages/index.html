@@ -9,7 +9,7 @@
           <video autoplay muted loop id="videoBG">
             <source src="{% static 'video/code_bg.mp4' %}" type="video/mp4">
           </video> 
-          <div class="intro-lead-in">Welcome To My Site!</div>
+          <!-- <div class="intro-lead-in">Welcome To My Site!</div> -->
           <div class="intro-heading text-uppercase">Schedule a consultation today</div> 
           <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger tell-me-more-btn" href="#services">Tell Me More</a>
         </div>
@@ -60,26 +60,26 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Portfolio</h2>
-            <h3 class="section-subheading text-muted">Some projects I worked on for clients.</h3>
+            <h3 class="section-subheading text-muted">Projects I worked on.</h3>
           </div>
         </div>
         <div class="row">
-    		{% for project in projects %}
-				<div class="col-md-4 col-sm-6 portfolio-item">
-					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{ project.id }}">
-					  <div class="portfolio-hover">
-					    <div class="portfolio-hover-content">
-					      <i class="fa fa-plus fa-3x"></i>
-					    </div>
-					  </div>
-					  <img class="img-fluid portfolio-img" src="{{ project.image }}" alt="{{ project.name }}">
-					</a>
-					<div class="portfolio-caption">
-					  <h4>{{ project.name }}</h4>
-					  <p class="text-muted">{{ project.type }}</p>
-					</div>
-				</div>
-            {% endfor %}
+    		  {% for project in projects %}
+    				<div class="col-md-4 col-sm-6 portfolio-item">
+    					<a class="portfolio-link" data-toggle="modal" href="#portfolioModal{{ project.id }}">
+    					  <div class="portfolio-hover">
+    					    <div class="portfolio-hover-content">
+    					      <i class="fa fa-plus fa-3x"></i>
+    					    </div>
+    					  </div>
+    					  <img class="img-fluid portfolio-img" src="{{ project.image }}" alt="{{ project.name }}">
+    					</a>
+    					<div class="portfolio-caption">
+    					  <h4>{{ project.name }}</h4>
+    					  <p class="text-muted">{{ project.type }}</p>
+    					</div>
+    				</div>
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -90,7 +90,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">About</h2>
-            <h3 class="section-subheading text-muted">Time of development carreer related events.</h3>
+            <h3 class="section-subheading text-muted">Time of development career related events.</h3>
           </div>
         </div>
         <div class="row">
@@ -102,11 +102,11 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>2009-2011</h4>
-                    <h4 class="subheading">Our Humble Beginnings</h4>
+                    <h4>2009-2013</h4>
+                    <h4 class="subheading">Action Packed</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">I was in the Marine Corps infantry. I deployed twice to Afghanistan. Truly learned the meaning of commitment and attention to detail. Two things that really help me succeed in software development today.</p>
                   </div>
                 </div>
               </li>
@@ -116,11 +116,11 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>March 2011</h4>
-                    <h4 class="subheading">An Agency is Born</h4>
+                    <h4>2013-2015</h4>
+                    <h4 class="subheading">An developer is Born</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">I met a fantastic developer and Marine by the name of <a href="https://www.linkedin.com/in/krzemienski/" target="_blank">Nick Krzemienski</a> who also ran a conulting startup. At the time I was just coding as a hobby and Nick took me under his wing so to speak and gave me an internship at his company <a href="http://kodalabs.com/" target="_blank">KodaLabs. I was later promoted to actual developer, after proving my worth working on all types of projects.</a></p>
                   </div>
                 </div>
               </li>
@@ -130,11 +130,11 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>December 2012</h4>
-                    <h4 class="subheading">Transition to Full Service</h4>
+                    <h4>2015-2017</h4>
+                    <h4 class="subheading">Learned the sales/energy business</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">I took an opportunity to work with one of clients from Koda Labs <a href="https://www.linkedin.com/in/jack-doueck-44417a17/" target="_blank">Jack Doueck</a> on his <a href="http://www.ledplususa.com/"  target="_blank">Led Plus</a> application. During this time I learned unprecedented amount of knowledge from Jack about business as well as the energy industry.</p>
                   </div>
                 </div>
               </li>
@@ -144,18 +144,18 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>July 2014</h4>
-                    <h4 class="subheading">Phase Two Expansion</h4>
+                    <h4>2018-∞</h4>
+                    <h4 class="subheading">Always Learning</h4>
                   </div>
                   <div class="timeline-body">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                    <p class="text-muted">Currently I'm looking for work so in the meantime I've done a freelance project <a href="">Monopoly Property Solutions</a> as well as a on going project for a game I play <a href="https://www.elitedangerousevents.com/">Elite Dangerous Events</a>. Also working on my MongoDB cert.</p>
                   </div>
                 </div>
               </li>
               <li class="timeline-inverted">
                 <div class="timeline-image">
                   <h4>Be Part
-                    <br>Of Our
+                    <br>Of My
                     <br>Story!</h4>
                 </div>
               </li>
